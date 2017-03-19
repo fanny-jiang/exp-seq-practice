@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // mount your routers
 app.use('/kitten', require('./kittenRoutes'));
+app.use('/owner', require('./ownerRoutes'));
 
 // error handling
 app.use(function (err, req, res, next) {

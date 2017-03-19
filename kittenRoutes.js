@@ -52,7 +52,10 @@ router.post('/:name', function (req, res, next) {
 router.put('/:id/groom', function (req, res, next) {
     Kitten.findById(req.params.id)
         .then(function (kitten) {
-            res.send(`${kitten.name} got a haircut!`);
+            kitten.grooming();
+        })
+        .then(function () {
+            res.send(`Someone just got a haircut!`);
         })
         .catch(next);
 });

@@ -28,8 +28,7 @@ var Kitten = db.define('kittens', {
             return `${this.color} ${this.fluffiness}`
         }
     },
-    // methods that can only be called on an instance,
-    // don 't need to be invoked
+    // methods that can only be called on an instance, need to be invoked
     instanceMethods: {
         grooming: function () {
             this.update({
