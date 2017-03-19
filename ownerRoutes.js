@@ -25,3 +25,21 @@ router.post('/:name', function (req, res, next) {
         .then(res.sendStatus(201))
         .catch(next);
 });
+
+router.put('/adopt/:name/', function (req, res, next) {
+    Owner.findOne({ where: { name: req.params.name } })
+        .then(function (owner) {
+            owner.adopt(Math.ceil(Math.random() * 10))
+        })
+        .then(res.send('You\'ve adopted a kitten'))
+        .catch(next);
+});
+
+router.put('/adopt/:name/:catid', function (req, res, next) {
+    Owner.findOne({ where: { name: req.params.name } })
+        .then(function (owner) {
+            owner.adopt(req.params.catid)
+        })
+        .then(res.send('You\'ve adopted a kitten'))
+        .catch(next);
+});

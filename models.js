@@ -75,6 +75,14 @@ var Owner = db.define('owners', {
             } else {
                 return `${this.name} is just a regular cat person!`;
             }
+        },
+        adopt: function (catId) {
+            Kitten.update({ ownerId: this.id }, {
+                    where: {
+                        id: catId
+                    }
+                })
+                .catch();
         }
     }
 })

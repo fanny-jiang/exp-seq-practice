@@ -30,6 +30,7 @@ router.get('/orangefluff', function (req, res, next) {
 
 });
 
+
 router.get('/:id', function (req, res, next) {
     Kitten.findById(req.params.id)
         .then(function (kitten) {
