@@ -11,7 +11,12 @@ module.exports = router;
 router.get('/', function (req, res, next) {
     Kitten.findAll()
         .then(function (kittens) {
-            res.send(kittens)
+            return kittens.map(function (kitten) {
+                return kitten.name;
+            })
+        })
+        .then(function (kittensNames) {
+            res.send(kittensNames.join(', '))
         })
         .catch(next);
 })
@@ -47,7 +52,7 @@ router.post('/:name', function (req, res, next) {
 router.put('/:id/groom', function (req, res, next) {
     Kitten.findById(req.params.id)
         .then(function (kitten) {
-            res.send('Someone got a haircut!');
+            res.send(`${kitten.name} got a haircut!`);
         })
         .catch(next);
 });

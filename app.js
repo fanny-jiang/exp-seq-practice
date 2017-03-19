@@ -29,7 +29,7 @@ app.use(function (err, req, res, next) {
 
 // sync db to server
 
-db.sync()
+db.sync({ force: false })
     .then(function () {
         app.listen(3000, function () {
             console.log('listening on port 3000!');
