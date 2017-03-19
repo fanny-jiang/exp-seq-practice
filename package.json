@@ -2,13 +2,21 @@
   "name": "exp-seq-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanny-jiang/exp-seq-practice.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanny-jiang/exp-seq-practice/issues"
+  },
+  "homepage": "https://github.com/fanny-jiang/exp-seq-practice#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
